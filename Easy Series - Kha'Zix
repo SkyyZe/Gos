@@ -5,8 +5,6 @@ KhaZixMenu.Combo:Boolean("Q", "Use Q", true)
 KhaZixMenu.Combo:Boolean("W", "Use W", true)
 KhaZixMenu.Combo:Boolean("E", "Use E", true)
 KhaZixMenu.Combo:Boolean("R", "Use R", true)
-KhaZixMenu.Combo:Boolean("KSQ", "Killsteal with Q", true)	
-KhaZixMenu.Combo:Boolean("KSW", "Killsteal with W", true)
 KhaZixMenu.Combo:Slider("RM", "R only when enemy more than", 3, 1, 5, 1)
 
 local KhaZixW = {delay = .5, range = 1000, width = 250, speed = 828.5}
