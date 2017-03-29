@@ -13,7 +13,7 @@ function MonkeyKing:_init()
 end
 	
 	function MonkeyKing:LoadSpells()
-	    Q = {Range = 300 , Delay = 0.25}
+	        Q = {Range = 300 , Delay = 0.25}
 		W = {Range = 175 , Delay = 0.25}
 		E = {Range = 625 , Delay = 0.25}
 		R = {Range = 162 , Delay = 0.25}
