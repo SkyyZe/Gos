@@ -6,53 +6,53 @@ function MonkeyKing:_init()
 	require('DamageLib')
 	PrintChat("[Easy Wukong] loaded")
 	self:LoadSpells()
-    self:LoadMenu()
+        self:LoadMenu()
 	Callback.Add('Tick', function() self:Tick() end)
-    Callback.Add('Draw', function() self:Draw() end)
+        Callback.Add('Draw', function() self:Draw() end)
 	
 end
 	
-	function MonkeyKing:LoadSpells()
-	        Q = {Range = 300 , Delay = 0.25}
-		W = {Range = 175 , Delay = 0.25}
-		E = {Range = 625 , Delay = 0.25}
-		R = {Range = 162 , Delay = 0.25}
+function MonkeyKing:LoadSpells()                                                                 
+    Q = {Range = 300 , Delay = 0.25}
+    W = {Range = 175 , Delay = 0.25}
+    E = {Range = 625 , Delay = 0.25}
+    R = {Range = 162 , Delay = 0.25}
 end
 	
 function MonkeyKing:Menu()
-	self.Menu = MenuElement({type = MENU, id = "MonkeyKing", name = "Wukong - The Monkey King", leftIcon="http://img07.deviantart.net/b61a/i/2013/118/7/4/league_of_legends___volcanic_wukong_wallpaper_by_iamsointense-d5lc4bm.jpg"})
+    self.Menu = MenuElement({type = MENU, id = "MonkeyKing", name = "Wukong - The Monkey King", leftIcon="http://img07.deviantart.net/b61a/i/2013/118/7/4/league_of_legends___volcanic_wukong_wallpaper_by_iamsointense-d5lc4bm.jpg"})
 	
-	self.Menu:MenuElement({type = MENU, id = "Combo", name = "Combo"})
-        self.Menu.Combo:MenuElement({id = "CombQ", name = "Use Q", value = true})
-        self.Menu.Combo:MenuElement({id = "CombW", name = "Use W", value = true})
-        self.Menu.Combo:MenuElement({id = "CombE", name = "Use E", value = true})
-        self.Menu.Combo:MenuElement({id = "CombR", name = "Use R", value = true})
-	self.Menu.Combo:MenuElement({id = "CombMana", name = "Min. Mana to Combo", value = 40, min = 0, max = 100})
+    self.Menu:MenuElement({type = MENU, id = "Combo", name = "Combo"})
+    self.Menu.Combo:MenuElement({id = "CombQ", name = "Use Q", value = true})
+    self.Menu.Combo:MenuElement({id = "CombW", name = "Use W", value = true})
+    self.Menu.Combo:MenuElement({id = "CombE", name = "Use E", value = true})
+    self.Menu.Combo:MenuElement({id = "CombR", name = "Use R", value = true}) 
+    self.Menu.Combo:MenuElement({id = "CombMana", name = "Min. Mana to Combo", value = 40, min = 0, max = 100})
 	
-	self.Menu:MenuElement({type = MENU, id = "Harass", name = "Harass"})
-	self.Menu.Harass:MenuElement({id = "HarassQ", name = "Use Q", value = true})
-	self.Menu.Harass:MenuElement({id = "HarassE", name = "Use E", value = true})
-	self.Menu.Harass:MenuElement({id = "HarassMana", name = "Min. Mana", value = 40, min = 0, man = 100})
+    self.Menu:MenuElement({type = MENU, id = "Harass", name = "Harass"})
+    self.Menu.Harass:MenuElement({id = "HarassQ", name = "Use Q", value = true})
+    self.Menu.Harass:MenuElement({id = "HarassE", name = "Use E", value = true})
+    self.Menu.Harass:MenuElement({id = "HarassMana", name = "Min. Mana", value = 40, min = 0, man = 100})
 	
-	self.Menu:MenuElement({type = MENU, id = "Farm", name = "LaneClear"})
-	self.Menu.Farm:MenuElement({id = "LcE", name = "Use E", value =true})
-	self.Menu.Farm:MenuElement({id = "LcQ", name = "Use Q", value =true})
-	self.Menu.Farm:MenuElement({id = "lcMana", name = "Min. Mana", value = 40, min = 0, max = 100})
+    self.Menu:MenuElement({type = MENU, id = "Farm", name = "LaneClear"})
+    self.Menu.Farm:MenuElement({id = "LcE", name = "Use E", value =true})
+    self.Menu.Farm:MenuElement({id = "LcQ", name = "Use Q", value =true})
+    self.Menu.Farm:MenuElement({id = "lcMana", name = "Min. Mana", value = 40, min = 0, max = 100})
 	
-	self.Menu:MenuElementn({type = MENU, id = "LastHit", name = "LastHit"})
-	self.Menu.LastHit:MenuElement({id = "lhQ", name = "Use Q", value = true})
-	self.Menu.LastHit:MenuElement({id = "lhMana", name = "Min. Mana", value = 40, min = 0, max = 100})
+    self.Menu:MenuElementn({type = MENU, id = "LastHit", name = "LastHit"})
+    self.Menu.LastHit:MenuElement({id = "lhQ", name = "Use Q", value = true})
+    self.Menu.LastHit:MenuElement({id = "lhMana", name = "Min. Mana", value = 40, min = 0, max = 100})
 	
-	self.Menu:MenuElement ({type = MENU, id = "Misc", name = "Misc"})
+    self.Menu:MenuElement ({type = MENU, id = "Misc", name = "Misc"})
 if myHero:GetSpellData(4).name == "SummonerDot" or myHero:GetSpellData(5).name == "SummonerDot" then
     self.Menu.Misc:MenuElement({id = "IgniteE", name = "Use Ignite", value = true})
 end
     self.Menu.Misc:MenuElement({id = "kswithQ", name = "Use Q to ks", value = true})
-	self.Menu.Misc:MenuElement({id = "kswithE", name = "Use E to ks", value = true})
-	self.Menu.Misc:MenuElement({id = "kswithR", name = "Use R to ks", value = true})
+    self.Menu.Misc:MenuElement({id = "kswithE", name = "Use E to ks", value = true})
+    self.Menu.Misc:MenuElement({id = "kswithR", name = "Use R to ks", value = true})
 	
 	
-	self.Menu:MenuElement({type = MENU, id = "Draw", name = "Drawing Settings"})
+    self.Menu:MenuElement({type = MENU, id = "Draw", name = "Drawing Settings"})
     self.Menu.Draw:MenuElement({id = "DrawSpells", name = "Draw Only Ready Spells", value = true})
     self.Menu.Draw:MenuElement({id = "DrawQ", name = "Draw Q Range", value = true})
     self.Menu.Draw:MenuElement({id = "DrawW", name = "Draw W Range", value = true})
@@ -239,19 +239,16 @@ function MonkeyKing:CastQ(unit)
 end
  
  
---W CAST
 function MonkeyKing:CastW()
     Control.CastSpell(HK_W)
 end
  
  
---E CAST
 function MonkeyKing:CastE(unit)
     Control.CastSpell(HK_E, unit)
 end
  
  
---R CAST
 function MonkeyKing:CastR(Rtarget)
     if Rtarget then
         local castPos = Rtarget:GetPrediction(R.Speed, R.Delay)
