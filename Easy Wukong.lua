@@ -128,26 +128,18 @@ function MonkeyKing:Misc()
                 end
             end
         end
-		
-		
-		if self:IsValidTarget(Enemy, 162) and Enemy.team ~= myHero.team then
+
+
+        if self:IsValidTarget(Enemy, 162) and Enemy.team ~= myHero.team then
             if self.Menu.Misc.kswithR:Value() then
                 if getdmg("R", Enemy, myHero) > Enemy.health then
                     self:CastR(Enemy)
                     return;
                 end
             end
-			
-		if self:IsValidTarget(Enemy, 625) and Enemy.team ~= myHero.team then
-            if self.Menu.Misc.kswithE:Value() then
-                if getdmg("E", Enemy, myHero) > Enemy.health then
-                    self:CastE(Enemy)
-                    return;
-                end
-            end
-			
-			
-			if myHero:GetSpellData(5).name == "SummonerDot" and self.Menu.Misc.IgniteE:Value() and self:IsReady(SUMMONER_2) then
+        
+
+            if myHero:GetSpellData(5).name == "SummonerDot" and self.Menu.Misc.IgniteE:Value() and self:IsReady(SUMMONER_2) then
                 if self:IsValidTarget(Enemy, 600, false, myHero.pos) and Enemy.health + Enemy.hpRegen*2.5 + Enemy.shieldAD < 50 + 20*myHero.levelData.lvl then
                     Control.CastSpell(HK_SUMMONER_2, Enemy)
                     return;
