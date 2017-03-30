@@ -20,7 +20,7 @@ end
 end
 	
 function MonkeyKing:Menu()
-	self.Menu = MenuElement({type = MENU, id = "MonkeyKing", name = "Wukong - The Monkey King", left icon ="http://img07.deviantart.net/b61a/i/2013/118/7/4/league_of_legends___volcanic_wukong_wallpaper_by_iamsointense-d5lc4bm.jpg"})
+	self.Menu = MenuElement({type = MENU, id = "MonkeyKing", name = "Wukong - The Monkey King", leftIcon="http://img07.deviantart.net/b61a/i/2013/118/7/4/league_of_legends___volcanic_wukong_wallpaper_by_iamsointense-d5lc4bm.jpg"})
 	
 	self.Menu:MenuElement({type = MENU, id = "Combo", name = "Combo"})
 	self.Menu.Combo:MenuElement({id = "CombQ", name = "Use Q", value true})
