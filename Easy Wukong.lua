@@ -59,9 +59,8 @@ end
     self.Menu.Draw:MenuElement({id = "DrawE", name = "Draw E Range", value = true})
     self.Menu.Draw:MenuElement({id = "DrawR", name = "Draw R Range", value = true})
     self.Menu.Draw:MenuElement({id = "DrawTarget", name = "Draw Target", value = true}
-	
-	
-	PrintChat("[Easy Wukong] Menu Loaded")
+		
+    PrintChat("[Easy Wukong] Menu Loaded")
 end
 
 function MonkeyKing:Tick()
@@ -286,3 +285,7 @@ function OnLoad()
     MonkeyKing()
 
 end
+
+	
+	
+	
