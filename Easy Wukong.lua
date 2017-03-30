@@ -61,7 +61,7 @@ end
     self.Menu.Draw:MenuElement({id = "DrawTarget", name = "Draw Target", value = true}
 	
 	
-	PrintChat("[MonkeyKing] Menu Loaded
+	PrintChat("[Easy Wukong] Menu Loaded")
 end
 
 function MonkeyKing:Tick()
