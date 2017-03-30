@@ -58,7 +58,7 @@ end
     self.Menu.Draw:MenuElement({id = "DrawW", name = "Draw W Range", value = true})
     self.Menu.Draw:MenuElement({id = "DrawE", name = "Draw E Range", value = true})
     self.Menu.Draw:MenuElement({id = "DrawR", name = "Draw R Range", value = true})
-    self.Menu.Draw:MenuElement({id = "DrawTarget", name = "Draw Target", value = true}
+    self.Menu.Draw:MenuElement({id = "DrawTarget", name = "Draw Target", value = true})
 		
     PrintChat("[Easy Wukong] Menu Loaded")
 end
