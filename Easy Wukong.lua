@@ -137,6 +137,16 @@ function MonkeyKing:Misc()
                     return;
                 end
             end
+	end
+			
+		
+	if self:IsValidTarget(Enemy, 625) and Enemy.team ~= myHero.team then
+            if self.Menu.Misc.kswithE:Value() then
+                if getdmg("E", Enemy, myHero) > Enemy.health then
+                    self:CastR(Enemy)
+                    return;
+                end
+            end
         
 
             if myHero:GetSpellData(5).name == "SummonerDot" and self.Menu.Misc.IgniteE:Value() and self:IsReady(SUMMONER_2) then
